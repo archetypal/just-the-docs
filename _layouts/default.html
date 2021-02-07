@@ -81,30 +81,34 @@ layout: table_wrappers
         </div>
       {% endif %}
       {% include header_custom.html %}
-      {% if site.aux_links %}
-        <nav aria-label="Auxiliary" class="aux-nav">
-          <ul class="aux-nav-list">
-            <li class="aux-nav-list-item">
-              <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}" class="site-button"
-                {% if site.aux_links_new_tab %}
-                target="_blank" rel="noopener noreferrer"
-                {% endif %}
-              >
-                Edit
-              </a>
-            </li>
-            <li class="aux-nav-list-item">or</li>
-            <li class="aux-nav-list-item">
-              <a href="{{ site.github.repository_url }}/blob/main/{{ page.path }}" class="site-button"
-                {% if site.aux_links_new_tab %}
-                target="_blank" rel="noopener noreferrer"
-                {% endif %}
-              >
-                view
-              </a>
-            </li>
-            <li class="aux-nav-list-item">this page</li>
-          </ul>
+      <nav aria-label="Auxiliary" class="aux-nav">
+        <ul class="aux-nav-list">
+          <li class="aux-nav-list-item">
+            <a href="{{ site.github.repository_url }}" 
+              class="site-button"
+              target="_blank" rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+          <li class="aux-nav-list-item">
+            <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}" 
+              class="site-button"
+              target="_blank" rel="noopener noreferrer"
+            >
+              Edit
+            </a>
+          </li>
+          <li class="aux-nav-list-item">
+            <a href="{{ site.github.repository_url }}/blob/{{ site.github.source.branch }}/{{ page.path }}" 
+              class="site-button"
+              target="_blank" rel="noopener noreferrer"
+            >
+              View
+            </a>
+          </li>
+        </ul>
+        {% if site.aux_links %}
           <ul class="aux-nav-list">
             {% for link in site.aux_links %}
               <li class="aux-nav-list-item">
@@ -118,8 +122,8 @@ layout: table_wrappers
               </li>
             {% endfor %}
           </ul>
-        </nav>
-      {% endif %}
+        {% endif %}
+      </nav>
     </div>
     <div id="main-content-wrap" class="main-content-wrap">
       {% unless page.url == "/" %}
