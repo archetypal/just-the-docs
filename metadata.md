@@ -131,9 +131,7 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: |+
-
-
+excerpt_separator:
 incremental: false
 detach: false
 port: '4000'
