@@ -92,7 +92,9 @@ layout: table_wrappers
               >
                 Edit
               </a>
-              or
+            </li>
+            <li class="aux-nav-list-item">or</li>
+            <li class="aux-nav-list-item">
               <a href="{{ site.github.repository_url }}/blob/main/{{ page.path }}" class="site-button"
                 {% if site.aux_links_new_tab %}
                 target="_blank" rel="noopener noreferrer"
@@ -100,8 +102,8 @@ layout: table_wrappers
               >
                 view
               </a>
-              this page  {{ site.github.source.path }}
             </li>
+            <li class="aux-nav-list-item">this page</li>
           </ul>
           <ul class="aux-nav-list">
             {% for link in site.aux_links %}
