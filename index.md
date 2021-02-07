@@ -40,12 +40,12 @@ remote_theme: pmarsceill/just-the-docs
 ## Metadata
 
 Site metadata available (not page specific):
-```json
+```yaml
 {{ site | jsonify }}
 ```
 
 Page metadata available:
-```json
+```yaml
 {{ page | jsonify }}
 ```
 
