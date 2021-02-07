@@ -107,9 +107,7 @@ layout: table_wrappers
               View
             </a>
           </li>
-        </ul>
-        {% if site.aux_links %}
-          <ul class="aux-nav-list">
+          {% if site.aux_links %}
             {% for link in site.aux_links %}
               <li class="aux-nav-list-item">
                 <a href="{{ link.last }}" class="site-button"
@@ -121,8 +119,8 @@ layout: table_wrappers
                 </a>
               </li>
             {% endfor %}
-          </ul>
-        {% endif %}
+          {% endif %}
+        </ul>
       </nav>
     </div>
     <div id="main-content-wrap" class="main-content-wrap">
@@ -189,9 +187,7 @@ layout: table_wrappers
             <!-- Copyright and License Statement-->
             &copy; {{ site.github.owner.created_at | date: "%Y" }}-{{ "now" | date: "%Y" }} 
             <a href="{{ site.github.owner.html_url }}">{{ site.github.owner.name }}</a>
-            |
-            Distributed under 
-            <a href="{{ site.github.license.url }}">{{ site.github.license.name }}</a>
+            | Distributed under {{ site.github.license.name }}
 
             {% if site.last_edit_timestamp %}
               <div class="d-flex mt-2">
