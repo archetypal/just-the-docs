@@ -37,11 +37,16 @@ remote_theme: pmarsceill/just-the-docs
 
 - [See configuration options]({{ site.baseurl }}{% link docs/configuration.md %})
 
-## Site Metadata
+## Metadata
 
 Site metadata available (not page specific):
 ```json
 {{ site | jsonify }}
+```
+
+Page metadata available:
+```json
+{{ page | jsonify }}
 ```
 
 ---
