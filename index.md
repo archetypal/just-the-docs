@@ -9,10 +9,10 @@ permalink: /
 # Focus on writing good documentation
 {: .fs-9 }
 
-Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
+The Archetypal fork of Just the Docs gives your documentation a jumpstart with a responsive Jekyll theme that is easily customizable and hosted on GitHub Pages.
 {: .fs-6 .fw-300 }
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/pmarsceill/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/archetypal/just-the-docs){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
@@ -26,12 +26,12 @@ Just the Docs is built for [Jekyll](https://jekyllrb.com), a static site generat
 
 ### Quick start: Use as a GitHub Pages remote theme
 
-1. Add Just the Docs to your Jekyll site's `_config.yml` as a [remote theme](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/)
+1. Enable [GitHub Pages](https://pages.github.com/) for your organization or project site.
+2. Add Just the Docs to your `_config.yml` as a [remote theme](https://github.com/benbalter/jekyll-remote-theme)
 ```yaml
-remote_theme: pmarsceill/just-the-docs
+remote_theme: archetypal/just-the-docs@{{ site.github.latest_release.tag_name }}
 ```
-<small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a `_config.yml` file. [See an example repository](https://github.com/pmarsceill/jtd-remote)</small>
-
+<small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a `_config.yml` file.</small>
 
 ### Configure Just the Docs
 
