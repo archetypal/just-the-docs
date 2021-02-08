@@ -28,7 +28,7 @@ function activateLi(element) {
     return;
   }
   element.classList.toggle('active');
-  addClass(element.parentElement.parentElement) 
+  activateLi(element.parentElement.parentElement) 
 }
 
 function initNav() {
