@@ -114,11 +114,11 @@ nav:
   - title: Home
     url: /
   - title: Configuration
-    url: docs/configuration/
+    url: /docs/configuration/
   - title: UI Components
-    url: docs/ui-components
+    url: /docs/ui-components
     nav:
       - title: Typography
-        url: docs/ui-components/typography/
+        url: /docs/ui-components/typography/
       - title: Buttons
-        url: docs/ui-components/buttons/
+        url: /docs/ui-components/buttons/
