@@ -39,7 +39,8 @@ function initNav() {
 
   jtd.addEvent(document, 'click', function(e){
     var target = e.target;
-    while (target && !(target.classList && target.classList.contains('nav-list-expander'))) {
+    while (target && !(target.classList && 
+      (target.classList.contains('nav-list-expander') || target.classList.contains('nav-list-menu')))) {
       target = target.parentNode;
     }
     if (target) {

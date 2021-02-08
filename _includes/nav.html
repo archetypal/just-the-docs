@@ -5,7 +5,7 @@
       class="nav-list-item{% if page.url == item.url %} active{% endif %}"
     >
       {% if item.nav %}
-        <a href="#" class="nav-list-expander">
+        <a class="nav-list-expander" href="#">
           <svg viewBox="0 0 24 24">
             <use xlink:href="#svg-arrow-right"></use>
           </svg>
@@ -17,7 +17,7 @@
           {{ item.title }}
         </a>
       {% else %}
-        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}" href="javascript:void(0)">
+        <a class="nav-list-menu nav-list-link{% if page.url == item.url %} active{% endif %}" href="#">
           {{ item.title }}
         </a>
       {% endif %}
