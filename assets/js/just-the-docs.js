@@ -27,7 +27,7 @@ function activateLi(element) {
   if (element.nodeName != "li") {
     return;
   }
-  element.classList.add('active');
+  element.classList.toggle('active');
   addClass(element.parentElement.parentElement) 
 }
 
