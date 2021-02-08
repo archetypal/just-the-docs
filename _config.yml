@@ -114,7 +114,7 @@ nav:
   - title: Home
     url: /
   - title: Configuration
-    url: docs/configuration
+    url: docs/configuration.md
   - title: UI Components
     url: docs/ui-components
     nav:
