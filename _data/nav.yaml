@@ -1,0 +1,21 @@
+# Need to use actual http path, not the path to the actual file.
+# This is a limitation of Jekyll 3.9.  See _includes/nav.html for more info.
+nav:
+- title: Home
+  path: /
+- title: Configuration
+  path: /docs/configuration/
+- title: UI Components
+  nav:
+  - title: Typography
+    path: /docs/ui-components/typography/
+  - title: Buttons
+    path: /docs/ui-components/buttons/
+- title: Deep
+  nav:
+  - title: Really Deep
+    nav:
+    - title: Very Deep
+      nav:
+      - title: Tables
+        path: /docs/ui-components/tables/

@@ -1,9 +1,18 @@
 <ul class="nav-list">
   {% for item in include.nav %}
-    <li
-      {% if page.url == item.url %}id="active-li" {% endif %} 
-      class="nav-list-item{% if page.url == item.url %} active{% endif %}"
-    >
+
+    <!-- 
+    Jekyll 3.9 does not support: link {{ item.path }}
+    Therefore, the path must be the actual page url path, not the path to the underlying file
+    -->
+    {% capture itemurl %}{{ item.path }}{% endcapture %}
+
+    {% if page.url == itemurl %}
+      <li id="active-li" class="nav-list-item active">
+    {% else %}
+      <li class="nav-list-item">
+    {% endif %}
+
       {% if item.nav %}
         <a class="nav-list-expander" href="#">
           <svg viewBox="0 0 24 24">
@@ -12,14 +21,12 @@
         </a>          
       {% endif %}
 
-      {% if item.url %}
-        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url | absolute_url }}">
+      {% if item.path %}
+        <a class="nav-list-link{% if page.url == itemurl %} active{% endif %}" href="{{ itemurl | absolute_url }}">
           {{ item.title }}
         </a>
       {% else %}
-        <a class="nav-list-menu nav-list-link{% if page.url == item.url %} active{% endif %}" href="#">
-          {{ item.title }}
-        </a>
+        <a class="nav-list-menu nav-list-link" href="#">{{ item.title }}</a>
       {% endif %}
 
       {% if item.nav %}

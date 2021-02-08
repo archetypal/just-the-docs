@@ -22,6 +22,18 @@
 
 permalink: pretty
 
+# duplicated so we can run locally
+plugins:
+- jekyll-github-metadata
+- jekyll-seo-tag
+#   - jekyll-coffeescript
+#   - jekyll-commonmark-ghpages
+#   - jekyll-gist
+#   - jekyll-relative-links
+#   - jekyll-optional-front-matter
+#   - jekyll-default-layout
+#   - jekyll-titles-from-headings
+
 # Regression tests
 # By default, the pages in /docs/tests are excluded when the ste is built.
 # To include them, comment-out the relevant line above.
@@ -108,23 +120,3 @@ compress_html:
   profile: false
   # ignore:
   #   envs: all
-
-nav:
-  - title: Home
-    url: /
-  - title: Configuration
-    url: /docs/configuration/
-  - title: UI Components
-    nav:
-      - title: Typography
-        url: /docs/ui-components/typography/
-      - title: Buttons
-        url: /docs/ui-components/buttons/
-  - title: Deep
-    nav:
-    - title: Really Deep
-      nav:
-      - title: Very Deep
-        nav:
-        - title: Tables
-          url: /docs/ui-components/tables/
