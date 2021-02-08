@@ -17,7 +17,7 @@
           {{ item.title }}
         </a>
       {% else %}
-        <div class="nav-list-link{% if page.url == item.url %} active{% endif %}">
+        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}">
           {{ item.title }}
         </div>
       {% endif %}
