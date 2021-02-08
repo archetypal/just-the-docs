@@ -12,9 +12,15 @@
         </a>          
       {% endif %}
 
-      <a class="nav-list-link{% if page.url == item.url %} active{% endif %}"  href="{{ item.url | absolute_url }}">
-        {{ item.title }}
-      </a>
+      {% if item.url %}
+        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}"  href="{{ item.url | absolute_url }}">
+          {{ item.title }}
+        </a>
+      {% else %}
+        <p class="nav-list-link{% if page.url == item.url %} active{% endif %}">
+          {{ item.title }}
+        </p>
+      {% endif %}
 
       {% if item.nav %}
         {% include nav.html nav=item.nav %}
