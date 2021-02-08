@@ -8,7 +8,7 @@
           </svg>
         </a>          
       {% endif %}
-      <a class="nav-list-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url | absolute_url }}">{{ item.title }}</a>
+      <a class="nav-list-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url | absolute_url }}">{{ item.title}} {{ page.url }}</a>
       {% if item.nav %}
         {% include nav.html nav=item.nav %}
       {% endif %}
