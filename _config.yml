@@ -120,10 +120,11 @@ nav:
         url: /docs/ui-components/typography/
       - title: Buttons
         url: /docs/ui-components/buttons/
-
-  # - title: Deep
-  #   nav:
-  #     - title: Really
-  #       url: /docs/ui-components/typography/
-  #     - title: Buttons
-  #       url: /docs/ui-components/buttons/
+  - title: Deep
+    nav:
+    - title: Really Deep
+      nav:
+      - title: Very Deep
+        nav:
+        - title: Tables
+          url: /docs/ui-components/tables/
