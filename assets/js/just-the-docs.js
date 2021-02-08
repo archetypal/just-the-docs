@@ -24,7 +24,7 @@ jtd.onReady = function(ready) {
 // Show/hide mobile menu
 
 function activateLi(element) {
-  if (element.nodeName != "li") {
+  if (element.nodeName != "LI") {
     return;
   }
   element.classList.toggle('active');
