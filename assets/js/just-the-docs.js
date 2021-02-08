@@ -23,7 +23,20 @@ jtd.onReady = function(ready) {
 
 // Show/hide mobile menu
 
+function activateLi(element) {
+  if (element.nodeName != "li") {
+    return;
+  }
+  element.classList.add('active');
+  addClass(element.parentElement.parentElement) 
+}
+
 function initNav() {
+  const activeLi = document.getElementById("active-li");
+  if (activeLi) {
+    activateLi(activeLi.parentElement.parentElement);
+  }
+
   jtd.addEvent(document, 'click', function(e){
     var target = e.target;
     while (target && !(target.classList && target.classList.contains('nav-list-expander'))) {
