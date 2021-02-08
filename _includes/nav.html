@@ -1,6 +1,22 @@
 <ul class="nav-list">
   {% for item in include.nav %}
-    <li class="nav-list-item">
+    <li
+      {% if page.url == item.url %}id="ali" {% endif %} 
+      class="nav-list-item{% if page.url == item.url %} active{% endif %}"
+    >
+      {% if page.url == item.url %}
+        <script>
+          function addClass(element) {
+            if (element.nodeName != "li") {
+              return;
+            }
+            element.classList.add("active");
+            addClass(element.parentElement.parentElement) 
+          }
+          addClass(document.getElementById("ali").parentElement.parentElement);
+        </script>
+      {% endif %}
+  
       {% if item.nav %}
         <a href="#" class="nav-list-expander">
           <svg viewBox="0 0 24 24">
@@ -8,18 +24,10 @@
           </svg>
         </a>          
       {% endif %}
-      <a 
-        {% if page.url == item.url %}id="aa" {% endif %} 
-        class="nav-list-link" href="{{ item.url | absolute_url }}"
-      >
+
+      <a class="nav-list-link{% if page.url == item.url %} active{% endif %}"  href="{{ item.url | absolute_url }}">
         {{ item.title }}
       </a>
-      {% if page.url == item.url %}
-        <script>
-          var element = document.getElementById("aa");
-          element.classList.add("active");
-        </script> 
-      {% endif %}
 
       {% if item.nav %}
         {% include nav.html nav=item.nav %}
