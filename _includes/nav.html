@@ -17,7 +17,7 @@
           {{ item.title }}
         </a>
       {% else %}
-        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}">
+        <a class="nav-list-link{% if page.url == item.url %} active{% endif %}" href="javascript:void(0)">
           {{ item.title }}
         </a>
       {% endif %}
