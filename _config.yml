@@ -108,3 +108,17 @@ compress_html:
   profile: false
   # ignore:
   #   envs: all
+
+# Playing with nav
+nav:
+  - title: Home
+    url: /
+  - title: Configuration
+    url: docs/configuration
+  - title: UI Components
+    url: docs/ui-components
+    nav:
+      - title: Typography
+        url: docs/ui-components/typography
+      - title: Buttons
+        url: docs/ui-components/buttons
