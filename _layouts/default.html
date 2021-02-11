@@ -48,15 +48,21 @@ layout: table_wrappers
       </a>
     </div>
     <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
-      {% include nav.html nav=site.data.nav.nav %}
+      {% if site.data.nav %}
+        {% include nav.html pages=site.data.nav.pages %}
+      {% else %}
+        {% include nav.html pages=site.pages %}
+      {% endif %}
     </nav>
     <footer class="site-footer">
-      <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/_data/nav.yaml" 
-        target="_blank" rel="noopener noreferrer"
-      >
-        Edit navigation
-      </a> |
-      Powered by <a href="https://github.com/archetypal/just-the-docs">Archetypal fork of Just the Docs</a>.
+      {% if site.data.nav %}
+        <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/_data/nav.yaml" 
+          target="_blank" rel="noopener noreferrer"
+        >
+          Edit |
+        </a>
+      {% endif %}
+      Theme by <a href="https://github.com/archetypal/just-the-docs">Archetypal fork of Just the Docs</a>.
     </footer>
   </div>
   <div class="main" id="top">

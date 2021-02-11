@@ -1,0 +1,12 @@
+{%- comment %} 
+Jekyll 3.9 does not support variable in a link tag.  So, rolling our own.
+
+Returns the page.url, if any, from the given include.path
+
+{% endcomment -%}
+
+{%- for page in site.pages -%}
+  {%- if include.path == page.path -%}
+    {{ page.url }}
+  {%- endif -%}
+{%- endfor -%}

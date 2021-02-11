@@ -44,6 +44,12 @@ Site metadata available (not page specific):
 {{ site | jsonify }}
 ```
 
+Site pages metadata available:
+```javascript
+{{ site.pages | jsonify }}
+```
+
+
 Page metadata available:
 ```javascript
 {{ page | jsonify }}

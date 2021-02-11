@@ -1,21 +1,23 @@
-# Need to use actual http path, not the path to the actual file.
-# This is a limitation of Jekyll 3.9.  See _includes/nav.html for more info.
-nav:
+# Navigation specification
+#
+# pages:
+#  url: / -- url with leading / - url takes precdence over path
+#  path: index.md -- file path, without leading /
+#  title: override page title or provide navigation title for children
+pages:
 - title: Home
-  path: /
-- title: Configuration
-  path: /docs/configuration/
+  path: url_takes_precident.md
+  url: /
+- path: docs/configuration.md
 - title: UI Components
-  nav:
-  - title: Typography
-    path: /docs/ui-components/typography/
-  - title: Buttons
-    path: /docs/ui-components/buttons/
+  pages:
+  - path: docs/ui-components/typography.md
+  - url: /docs/ui-components/buttons/
 - title: Deep
-  nav:
+  pages:
   - title: Really Deep
-    nav:
+    pages:
     - title: Very Deep
-      nav:
+      pages:
       - title: Tables
-        path: /docs/ui-components/tables/
+        url: /docs/ui-components/tables/

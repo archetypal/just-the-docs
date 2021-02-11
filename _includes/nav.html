@@ -1,19 +1,45 @@
 <ul class="nav-list">
-  {% for item in include.nav %}
+  {% for item in include.pages %}
+    
+    {% if item.url %}
+      {% assign anchor_href = item.url %}
+    {% elsif item.path %}
+      {% capture anchor_href %}{% include path_url.html path=item.path %}{% endcapture %}
+    {% else %}
+      {% assign anchor_href = "#" %}   
+    {% endif %}
 
-    <!-- 
-    Jekyll 3.9 does not support: link {{ item.path }}
-    Therefore, the path must be the actual page url path, not the path to the underlying file
-    -->
-    {% capture itemurl %}{{ item.path }}{% endcapture %}
+    {% for nav_exclude in site.nav_pages_exclude_urls %}
+      {% assign checkArray = anchor_href | split: nav_exclude %}
+      {% if checkArray[0] == "" or checkArray[0] == nil %}
+        {% assign anchor_href = "" %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
 
-    {% if page.url == itemurl %}
+    {% if anchor_href == "" %} 
+      {% continue %}
+    {% endif %}
+
+    {% if item.title %}
+      {% assign anchor_content = item.title %}
+    {% else %}
+      {% capture anchor_content %}{% include url_title.html url=anchor_href %}{% endcapture %}
+      {% if anchor_content == "" %}
+         {% if site.nav_pages_title_only %}
+           {% continue %}
+         {% endif %}
+         {% assign anchor_content = item.name %}
+      {% endif %}
+    {% endif %} 
+
+    {% if page.url == anchor_href %}
       <li id="active-li" class="nav-list-item active">
     {% else %}
       <li class="nav-list-item">
     {% endif %}
 
-      {% if item.nav %}
+      {% if item.pages %}
         <a class="nav-list-expander" href="#">
           <svg viewBox="0 0 24 24">
             <use xlink:href="#svg-arrow-right"></use>
@@ -21,16 +47,16 @@
         </a>          
       {% endif %}
 
-      {% if item.path %}
-        <a class="nav-list-link{% if page.url == itemurl %} active{% endif %}" href="{{ itemurl | absolute_url }}">
-          {{ item.title }}
-        </a>
+      {% if anchor_href == "#" %}
+        <a class="nav-list-menu nav-list-link" href="#">{{ anchor_content }}</a>
       {% else %}
-        <a class="nav-list-menu nav-list-link" href="#">{{ item.title }}</a>
+        <a class="nav-list-link{% if page.url == anchor_href %} active{% endif %}" href="{{ anchor_href | absolute_url }}">
+          {{ anchor_content }}
+        </a>
       {% endif %}
 
-      {% if item.nav %}
-        {% include nav.html nav=item.nav %}
+      {% if item.pages %}
+        {% include nav.html pages=item.pages %}
       {% endif %}
     </li>
   {% endfor %}
