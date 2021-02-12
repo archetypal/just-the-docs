@@ -51,7 +51,8 @@ layout: table_wrappers
       {% if site.data.nav %}
         {% include nav.html pages=site.data.nav.pages %}
       {% else %}
-        {% include nav.html pages=site.pages %}
+        {% assign sorted_pages = site.pages | sort: 'title'  %}
+        {% include nav.html pages=sorted_pages %}
       {% endif %}
     </nav>
     <footer class="site-footer">

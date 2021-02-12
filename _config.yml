@@ -22,22 +22,19 @@
 
 permalink: pretty
 
-# if auto generating navigation (no _data/nav.yaml provided) or to limit nav.yaml
+plugins:
+- jekyll-default-layout
+- jekyll-github-metadata
+- jekyll-optional-front-matter
+- jekyll-relative-links
+- jekyll-seo-tag
+- jekyll-titles-from-headings
+
+# _include/nav.html
+# if auto generating navigation (no _data/nav.yaml provided)
 nav_pages_title_only: true
 nav_pages_exclude_urls:
   - /404
-
-# duplicated so we can run locally
-plugins:
-- jekyll-github-metadata
-- jekyll-seo-tag
-#   - jekyll-coffeescript
-#   - jekyll-commonmark-ghpages
-#   - jekyll-gist
-#   - jekyll-relative-links
-#   - jekyll-optional-front-matter
-#   - jekyll-default-layout
-#   - jekyll-titles-from-headings
 
 # Regression tests
 # By default, the pages in /docs/tests are excluded when the ste is built.
