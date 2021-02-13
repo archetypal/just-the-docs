@@ -26,7 +26,7 @@
     {% else %}
       {% capture anchor_content %}{% include url_title.html url=anchor_href %}{% endcapture %}
       {% if anchor_content == "" %}
-         {% if site.nav_pages_title_only %}
+         {% if site.nav_pages_all != true %}
            {% continue %}
          {% endif %}
          {% assign anchor_content = item.name %}

@@ -27,7 +27,7 @@ Just the Docs is built for [Jekyll](https://jekyllrb.com), a static site generat
 1. Enable [GitHub Pages](https://pages.github.com/) for your organization or project site.
 2. Add Just the Docs to your `_config.yml` as a [remote theme](https://github.com/benbalter/jekyll-remote-theme)
 ```yaml
-remote_theme: archetypal/just-the-docs@{{ site.github.latest_release.tag_name }}
+remote_theme: archetypal/just-the-docs@v0.5.2
 ```
 <small>You must have GitHub Pages enabled on your repo, one or more Markdown files, and a `_config.yml` file.</small>
 

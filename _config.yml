@@ -24,7 +24,8 @@ permalink: pretty
 
 # _include/nav.html settings
 # if auto generating navigation (no _data/nav.yaml provided)
-nav_pages_title_only: true
+# by default, only includes pages with titles.  To show all, set to true
+# nav_pages_all: true
 nav_pages_exclude_urls:
   - /404
 
