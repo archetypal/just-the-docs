@@ -22,13 +22,8 @@
 
 permalink: pretty
 
-plugins:
-- jekyll-default-layout
-- jekyll-github-metadata
-- jekyll-optional-front-matter
-- jekyll-relative-links
-- jekyll-seo-tag
-- jekyll-titles-from-headings
+#plugins:
+#- jekyll-seo-tag
 
 # _include/nav.html
 # if auto generating navigation (no _data/nav.yaml provided)
