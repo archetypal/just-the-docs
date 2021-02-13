@@ -22,23 +22,11 @@
 
 permalink: pretty
 
-#plugins:
-#- jekyll-seo-tag
-
-# _include/nav.html
+# _include/nav.html settings
 # if auto generating navigation (no _data/nav.yaml provided)
 nav_pages_title_only: true
 nav_pages_exclude_urls:
   - /404
-
-# Regression tests
-# By default, the pages in /docs/tests are excluded when the ste is built.
-# To include them, comment-out the relevant line above.
-# Uncommenting the following line doesn't work - see https://github.com/jekyll/jekyll/issues/4791
-# include: ["docs/tests/"]
-
-# Set a path/url to a logo that will be displayed instead of the title
-#logo: "/assets/images/just-the-docs.png"
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -94,9 +82,6 @@ color_scheme: nil
 # e.g, UA-1234567-89
 # ga_tracking: UA-2709176-10
 # ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
-
-# plugins:
-#  - jekyll-seo-tag
 
 markdown: kramdown
 kramdown:
